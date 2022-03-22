@@ -1,3 +1,8 @@
+.message, .message_from_me{
+    max-width: 40vw;
+    word-wrap: break-word;
+    margin: 5px 0;
+}
 .message{
     width: fit-content;
     padding: 5px;

@@ -13,6 +13,7 @@ export default function Home() {
 
   function sendMessage(){
     socket.emit('message',{author: socket.id, user: user ,message: message})
+    setMessage("")
   }
 
   socket.on('updateMessages',(data)=>{
@@ -30,16 +31,16 @@ export default function Home() {
   return (
     <div>
       <div className={styles.chat}>
-        <div>{socket.id}</div>
         <div className={styles.messages} ref={chat_messages}>
           {messages.map((e,key)=>{
             return(<Message key={key} message={e} author={socket.id}></Message>)
           })}
         </div>
-        <input type="text" onChange={(e)=>handleUser(e)} placeholder="nome"/>
-        <br/>
-        <input type="text" onChange={(e)=>handleMessage(e)} placeholder="mensagem"/>
-        <button onClick={(e)=>{sendMessage()}}>Enviar</button>
+        <div className={styles.inputs}>
+          <input className={styles.name} type="text" onChange={(e)=>handleUser(e)} placeholder="nome"/>
+          <input className={styles.message} type="text" value={message} onChange={(e)=>handleMessage(e)} placeholder="mensagem"/>
+          <button className={styles.send} onClick={(e)=>{sendMessage()}}>Enviar</button>
+        </div>
       </div>
     </div>
   )

@@ -2,8 +2,19 @@
     max-height: 100vh;
 }
 .messages{
-    max-height:88vh;
+    height:88vh;
     display: flex;
     flex-direction: column;
-    overflow-y: hidden;
+    overflow-y: scroll;
+}
+.inputs{
+    height: 60px;
+    display: flex;
+}
+.name, .send{
+    width: 15vw;
+}
+.message{
+    
+    flex-grow: 1;
 }
