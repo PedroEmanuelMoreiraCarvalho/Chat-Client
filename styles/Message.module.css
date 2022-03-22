@@ -1,0 +1,13 @@
+.message{
+    width: fit-content;
+    padding: 5px;
+    border-radius: 10px;
+    background-color:cornflowerblue;
+}
+.message_from_me{
+    width: fit-content;
+    padding: 5px;
+    border-radius: 10px;
+    background-color:chartreuse;
+    margin-left:auto;
+}

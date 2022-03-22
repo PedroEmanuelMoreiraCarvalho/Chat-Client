@@ -1,0 +1,9 @@
+.chat{
+    max-height: 100vh;
+}
+.messages{
+    max-height:88vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
