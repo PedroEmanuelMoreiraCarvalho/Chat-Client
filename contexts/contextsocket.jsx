@@ -4,7 +4,7 @@ import parser from "socket.io-msgpack-parser"
 /*https://chatservershernows.herokuapp.com/*/
 
 
-var socket = io.connect("http://localhost:8000",{transports: ['websocket'], parser},()=>{
+var socket = io.connect("https://chatservershernows.herokuapp.com/",{transports: ['websocket'], parser},()=>{
     console.log("conectado")
 });
 
