@@ -6,26 +6,16 @@ import { SocketContext } from "../contexts/contextsocket";
 import styles from "../styles/Chat.module.css"
 
 export default function Home() {
-  const [user, setUser] = useState("")
-  const [message, setMessage] = useState("")
   const chat_messages = useRef(null)
-  const { socket, sendMessage } = useContext(SocketContext)
+  const [online_users, setOnlineUsers] = useState(1)
+  const { socket } = useContext(SocketContext)
 
-  const sendmessage = useCallback(()=>{
-    sendMessage(user,message)
-    setMessage("")
-  },[message])
-
-  function handleMessage(e){
-    setMessage(e.target.value)
-  }
-
-  function handleUser(e){
-    setUser(e.target.value)
-  }
-
+  socket.on("updateOnlineUsers",(connections)=>{
+    setOnlineUsers(connections)
+  })
   return (
     <div>
+      <div>{online_users} usários online</div>
       <div className={styles.chat}>
         <div className={styles.messages} ref={chat_messages}>
           <Chat/>
