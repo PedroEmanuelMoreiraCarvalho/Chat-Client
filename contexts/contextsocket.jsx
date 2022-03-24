@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import parser from "socket.io-msgpack-parser"
 /*https://chatservershernows.herokuapp.com/*/
+/*https://localhost:8000*/
 
 
 var socket = io.connect("https://chatservershernows.herokuapp.com/",{transports: ['websocket'], parser},()=>{
