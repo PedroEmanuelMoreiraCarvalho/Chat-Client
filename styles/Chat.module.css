@@ -2,13 +2,14 @@
     max-height: 100vh;
 }
 .messages{
-    height:88vh;
+    height:85vh;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
 }
 .inputs{
     height: 60px;
+    width: 100vw;
     display: flex;
 }
 .name, .send{

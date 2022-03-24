@@ -16,3 +16,10 @@
     background-color:chartreuse;
     margin-left:auto;
 }
+.message_from_server{
+    width: fit-content;
+    padding: 5px;
+    border-radius: 10px;
+    background-color:coral;
+    margin:auto;
+}

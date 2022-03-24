@@ -9,11 +9,13 @@ function Inputs(){
 
     const { sendMessage } = useContext(SocketContext)
 
-    const sendmessage = ()=>{
+    const sendmessage = (e) =>{
+        e.preventDefault()
         if(user.trim()==""){setWarning("digite um nome");return}
-        if(message.trim()==""){setWarning("digite uma mensagem para enviar");return}
+        if(message.trim()==""){setWarning("digite uma mensagem para enviar");setMessage("");return}
         sendMessage(user,message)
         setMessage("")
+        setWarning("")
     }
 
     function handleMessage(e){
@@ -25,14 +27,14 @@ function Inputs(){
     }
 
     return(
-        <>
+        <form className={styles.inputs} onSubmit={(e)=>{sendmessage(e)}}>
             {warning ? <div className={styles.warning}>
                 {warning}<button onClick={(e)=>{setWarning("")}}>x</button>
             </div> : null}
             <input className={styles.name} type="text" value={user} onChange={(e)=>handleUser(e)} placeholder="nome"/>
             <input className={styles.message} type="text" value={message} onChange={(e)=>handleMessage(e)} placeholder="mensagem"/>
-            <button className={styles.send} onClick={()=>{sendmessage()}}>Enviar</button>
-        </>
+            <button className={styles.send} type="submit">Enviar</button>
+        </form>
     )
 }
 export default Inputs
