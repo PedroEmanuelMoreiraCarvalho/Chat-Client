@@ -4,7 +4,6 @@ body {
   margin: 0;
   font-family: 'PT Sans Narrow', sans-serif;
   overflow-x: hidden;
-  overflow-y: hidden;
   height: 100vh;
   background: rgb(238,69,64);
   background: linear-gradient(0deg, rgba(238,69,64,1) 0%, rgba(124,41,64,1) 25%, rgba(79,39,62,1) 50%, rgba(44,46,67,1) 75%, rgba(16,44,62,1) 100%);

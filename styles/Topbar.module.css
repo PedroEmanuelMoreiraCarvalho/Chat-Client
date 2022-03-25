@@ -32,7 +32,11 @@
     margin-left: auto;
 }
 @media (max-width: 800px) {
+    .top_bar_background{
+        height: 80px;
+    }
     .top_bar{
         padding-top: 40px;
+        height: 40px;
     }
 }

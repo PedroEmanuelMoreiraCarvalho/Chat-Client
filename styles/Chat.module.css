@@ -12,6 +12,11 @@
     flex-direction: column;
     overflow-y: scroll;
 }
+@media (max-width: 800px) {
+    .messages{
+        height:78vh;
+    }
+}
 
 .messages::-webkit-scrollbar{
     width: 0.6em;
