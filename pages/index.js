@@ -2,6 +2,7 @@ import react, { useCallback, useContext, useRef, useState } from "react"
 import Chat from "../components/chat";
 import Inputs from "../components/inputs";
 import Message from "../components/message";
+import TopBar from "../components/top_bar";
 import { SocketContext } from "../contexts/contextsocket";
 import styles from "../styles/Chat.module.css"
 
@@ -15,7 +16,7 @@ export default function Home() {
   })
   return (
     <div>
-      <div>{online_users} usários online</div>
+      <TopBar/>
       <div className={styles.chat}>
         <div className={styles.messages} ref={chat_messages}>
           <Chat/>

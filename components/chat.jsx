@@ -1,12 +1,15 @@
 import { useContext, useEffect, useRef, useState } from "react"
 import { SocketContext, useMessages } from "../contexts/contextsocket"
+import styles from "../styles/Chat.module.css"
 import Message from "./message"
 import ServerMessage from "./server_message"
+import Typing from "./typing"
 
 function Chat(){
     const { socket } = useContext(SocketContext)
     const [mensagens, setMessages] = useState([])
     const chat = useRef(null)
+
     socket.on("updateMessages",(data)=>{
         setMessages(data)
     })
@@ -17,7 +20,6 @@ function Chat(){
         return <div ref={elementRef} />;
     };
       
-
     return(
         <div ref={chat}>
             {mensagens && mensagens.map((e,key)=>{

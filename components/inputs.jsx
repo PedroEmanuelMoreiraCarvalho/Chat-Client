@@ -7,7 +7,7 @@ function Inputs(){
     const [message, setMessage] = useState("")
     const [warning, setWarning] = useState("")
 
-    const { sendMessage } = useContext(SocketContext)
+    const { typing ,sendMessage } = useContext(SocketContext)
 
     const sendmessage = (e) =>{
         e.preventDefault()
@@ -20,6 +20,7 @@ function Inputs(){
 
     function handleMessage(e){
         setMessage(e.target.value)
+        typing()
     }
 
     function handleUser(e){

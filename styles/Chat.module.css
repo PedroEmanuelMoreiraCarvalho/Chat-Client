@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@597&family=PT+Sans+Narrow&display=swap');
+
 .chat{
-    max-height: 100vh;
+    max-height: max-content;
+    font-family: 'Mulish', sans-serif;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 1.22em;
 }
 .messages{
     height:85vh;
@@ -7,11 +12,59 @@
     flex-direction: column;
     overflow-y: scroll;
 }
+
+.messages::-webkit-scrollbar{
+    width: 0.6em;
+    height: 10vh;
+}
+.messages::-webkit-scrollbar-track{
+    background-color: none;
+}
+.messages::-webkit-scrollbar-thumb{
+    background: linear-gradient(0deg, rgb(255, 244, 95) 0%, rgb(255, 138, 80) 100%);
+    border-radius: 100vw;
+}
+
 .inputs{
     height: 60px;
-    width: 100vw;
+    width: 100%;
     display: flex;
 }
+.inputs>input{
+    border: none;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+.inputs>input::placeholder{
+    color:#222
+}
+.message{
+    background-color: #EB6859;
+}
+.name{
+    font-size: 25px;
+    border-radius: 30px 0px 0px 30px;
+    font-family: inherit;
+    background-color: #FDA26B;
+}
+.inputs>button{
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-family: inherit;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #FDA26B;
+    transition: all ease-in-out 0.2s;
+}
+.inputs>button:hover{
+    background-color: #fcff34;
+    border-radius: 30px 30px 30px 30px;
+    transform: translateY(-5px);
+}
+
 .name, .send{
     width: 15vw;
 }
@@ -19,15 +72,29 @@
     flex-grow: 1;
 }
 .warning{
+    display: flex;
+    align-items: center;
     position: absolute;
+    color: #fff;
     text-align: center;
-    background-color: #f03d3d;
-    color: #111;
+    border-radius: 10px;
+    background-color: #EB6859;
+    text-shadow: 2px 2px #222;
+    font-weight: bold;
     height: 20px;
     padding: 10px;
-    padding-bottom: 20px;
-    margin: -50px auto;
-    font-size: 20px;
+    margin: -55px auto;
+    font-size: 18px;
+}
+.warning::after{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    border-radius: 70px 0px 0px 0px;
+    background-color: #EB6859;
+    margin-top: 40px;
 }
 .warning>button{
     background-color: #fff;
