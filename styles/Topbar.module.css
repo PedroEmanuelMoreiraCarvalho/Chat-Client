@@ -31,3 +31,8 @@
     align-self: flex-end;
     margin-left: auto;
 }
+@media (max-width: 600px) {
+    .top_bar{
+        padding-top: 40px;
+    }
+}
